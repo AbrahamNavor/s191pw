@@ -1,3 +1,9 @@
-<div>
-    <!-- Live as if you were to die tomorrow. Learn as if you were to live forever. - Mahatma Gandhi -->
+
+<div class="container mt-4">
+
+<div class="alert alert-{{ $tipo }}" role="alert">
+    Soy un alert {{ $slot }}
+</div> 
+
 </div>
+

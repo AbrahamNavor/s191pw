@@ -4,8 +4,11 @@
     
 @section('contenido')
 
-    <x-Card encabezado="componente 1" titulo="titulo 1" textoBoton="Guardar"> Contenido de tarjeta 1 </x-Card>
+    <x-Card encabezado="componente 1" titulo="titulo 1" textoBoton="Guardar"> Contenido de tarjeta 1... </x-Card>
 
-    <x-Card encabezado="componente 2" titulo="titulo 2" textoBoton="Guardar"> Contenido de tarjeta 2 </x-Card>
+    <x-Card encabezado="componente 2" titulo="titulo 2" textoBoton="Guardar"> Contenido de tarjeta 2... </x-Card>
+
+    <x-alert tipo="danger"> Rojo </x-alert>
+    <x-alert tipo="warning"> Amarillo </x-alert>
 
 @endsection
