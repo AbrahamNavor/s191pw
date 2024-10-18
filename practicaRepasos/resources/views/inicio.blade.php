@@ -11,7 +11,7 @@
         <div class="jumbotron text-center mt-5">
             <h1 class="display-4">Bienvenido a Practica Repasos</h1>
             <p class="lead">Este es un sitio para realizar repasos vistos en clases. Universidad Politécnica de Querétaro. Pérez Navor Abraham - s191.</p>
-            <a class="btn btn-primary btn-lg mt-3" href="" role="button">REPASO 1</a>
+            <a class="btn btn-primary btn-lg mt-3" href="{{ route('rutarepaso1') }}" role="button">REPASO 1</a>
         </div>
 
         <div class="row">
