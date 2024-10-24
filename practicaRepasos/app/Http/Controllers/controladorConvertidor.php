@@ -15,7 +15,6 @@ class controladorConvertidor extends Controller
     public function convertidor(Request $request){
         $entrada = $request->input('entrada');
         $salida = $request->input('salida');
-        $cantidad = $request->input('cantidad');
         $resultado = 0;
 
         switch($salida){
