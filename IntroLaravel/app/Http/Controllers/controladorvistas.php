@@ -20,14 +20,12 @@ class controladorvistas extends Controller
 
     public function procesarCliente(Request $peticion){
 
-       //  return redirect('/'); //Redirección usando la ruta
-
-        // return redirect()->route('rutaconsulta'); //Redirección usando el nombre de ruta;
-
-        //return back(); //Redirección al origen de la petición
-
-        //$id = [['usuario' => '1'],['usuario' => '2']]; //Redirección con valores adjunto (variables, arreglos, etc)
-        //return view('formulario', compact('id'));
+        $validacion = $peticion->validate([
+            'txtnombre' => 'required|alpha|min:3|max:20',
+            'txtapellido' => 'required|min:3|max:20',
+            'txtcorreo' => 'required|:string|email',
+            'txttelefono' => 'required|numeric',
+        ]);
 
         $usuario = $peticion->input('txtnombre'); //Redirección enviando msj en session
         session()->flash('exito', 'Se guardo el usuario: '.$usuario);
