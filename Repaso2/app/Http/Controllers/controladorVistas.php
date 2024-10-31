@@ -13,4 +13,9 @@ class controladorVistas extends Controller
     public function registro(){
         return view('registro');
     }
+
+    public function procesaRegistro(Request $procesa){
+        return $procesa->all();
+    }
+
 }
