@@ -26,10 +26,10 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('rutacacas')?"text-warning":"" }}">Registro Clientes</a>
+                <a class="nav-link {{ request()->routeIs('rutacacas')?"text-warning":"" }}">{{ __('Registro Clientes')}}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('rutaconsulta')?"text-success":"" }}">Consultar Clientes</a>
+                <a class="nav-link {{ request()->routeIs('rutaconsulta')?"text-success":"" }}">{{ __('Consultar Clientes')}}</a>
               </li>
             </ul>
           </div>
