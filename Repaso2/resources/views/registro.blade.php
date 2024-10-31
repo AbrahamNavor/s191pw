@@ -7,6 +7,7 @@
 <div class="d-flex justify-content-center">
     <form action="" method="" class="form-container w-50">
         @csrf
+        <h1 class="text-center">Registro de Libros</h1>
         <div class="form-group">
             <label for="isbn">ISBN:</label>
             <input type="text" id="isbn" name="isbn" class="form-control" required>
