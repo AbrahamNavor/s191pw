@@ -2,4 +2,5 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', ['inicio']);
+Route::view('/', 'inicio')->name('rutainicio');
+Route::view('/registro','registro')->name('rutaregistro');

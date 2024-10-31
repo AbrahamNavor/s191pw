@@ -12,7 +12,7 @@
               <img alt="imagen aleatoria" src="https://picsum.photos/700/400?random">
     </div>
     <div class="d-flex justify-content-center">
-        <a href="" class="btn btn-success mt-3 w-50 text-center">Ir a otra vista</a>
+        <a href="{{ route('rutaregistro') }}" class="btn btn-success mt-3 w-50 text-center">Ir a Registro</a>
     </div>
 
 @endsection
