@@ -22,7 +22,12 @@ class controladorVistas extends Controller
     {
         $libro = $procesa->input('txttitulo');
         session()->flash('exito', 'El libro '.$libro.' ha sido registrado');
+    
+        echo "<script>
+            alertify.success('Todo correcto: Libro \"$libro\" guardado');
+        </script>";
+    
+        return to_route('rutainicio'); 
 
-        return to_route('rutainicio');
     }
 }

@@ -1,5 +1,15 @@
 <div class="container mt-5">
 
+    @if(session('exito'))
+    <x-alert tipo="success">{{ session('exito') }} </x-alert>
+    @endif
+
+    @if(session('exito'))
+    <script>
+        alertify.success('Todo correcto: Libro "{{ exito('$libro') }}" guardado');
+    </script>
+@endif
+
     <div class="card mx-auto mt-5" style="max-width: 600px;">
         <div class="card-body">
             <form action="{{ route('rutaconfirmaenvio') }}" method="POST" class="form-container w-100">
@@ -36,7 +46,7 @@
                     <small class="text-danger fst-italic">{{ $errors->first('txteditorial') }}</small>
                 </div>
                 <div class="form-group">
-                    <label for="email_editorial">{{ __('Email de Editorial') }}:</label>
+                    <label for="email_editorial">{{ __('Email de') }}Email de Editorial:</label>
                     <input type="email" name="txtemail" value="{{ old('txtemail') }}" class="form-control">
                     <small class="text-danger fst-italic">{{ $errors->first('txtemail') }}</small>
                 </div>
