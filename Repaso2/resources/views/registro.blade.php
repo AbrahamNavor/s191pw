@@ -4,6 +4,6 @@
 
 @section('contenido')
 
-<x-card titulo="Registro de Libros" boton="Registrar"></x-card>
+<x-card titulo="{{ __('Registro de Libros') }}" boton="{{ __('Registrar') }}"></x-card>
 
 @endsection

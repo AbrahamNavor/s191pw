@@ -14,17 +14,17 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ route('rutainicio')}}">Biblioteca</a>
+        <a class="navbar-brand" href="{{ route('rutainicio')}}">{{ __('Biblioteca') }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link {{ request()->routeIs('rutainicio') ? 'text-warning' : '' }}" href="{{ route('rutainicio') }}">Inicio</a>
+                    <a class="nav-link {{ request()->routeIs('rutainicio') ? 'text-warning' : '' }}" href="{{ route('rutainicio') }}">{{ __('Inicio') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('rutaregistro') ? 'text-warning' : '' }}" href="{{ route('rutaregistro') }}">Registro</a>
+                    <a class="nav-link {{ request()->routeIs('rutaregistro') ? 'text-warning' : '' }}" href="{{ route('rutaregistro') }}">{{ __('Registro') }}</a>
                 </li>
             </ul>
         </div>
@@ -34,7 +34,7 @@
 
     <footer class="bg-light text-center text-lg-start mt-5">
         <div class="container p-4">
-            <h5 class="card-title text-center">© Biblioteca Navor</h5>
+            <h5 class="card-title text-center">©{{ __('Biblioteca') }} Navor</h5>
             <p class="text-center">{{ now()->format('d M Y') }}</p>
         </div>
     </footer>
