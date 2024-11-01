@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     @vite(['resources/js/app.js'])
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <title>@yield('titulo')</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -17,10 +21,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link {{ request()->routeIs('rutainicio')?"text-warning":""}}" href="{{ route('rutainicio')}}">Inicio</a>
+                    <a class="nav-link {{ request()->routeIs('rutainicio') ? 'text-warning' : '' }}" href="{{ route('rutainicio') }}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{request()->routeIS('rutaregistro')?"text-warning":""}}" href="{{ route('rutaregistro')}}">Registro</a>
+                    <a class="nav-link {{ request()->routeIs('rutaregistro') ? 'text-warning' : '' }}" href="{{ route('rutaregistro') }}">Registro</a>
                 </li>
             </ul>
         </div>
@@ -30,8 +34,8 @@
 
     <footer class="bg-light text-center text-lg-start mt-5">
         <div class="container p-4">
-            <h5 class="card-title text-center">©Biblioteca Navor</h5>
-            <p class="text-center">{{ date('d M Y') }}</p>
+            <h5 class="card-title text-center">© Biblioteca Navor</h5>
+            <p class="text-center">{{ now()->format('d M Y') }}</p>
         </div>
     </footer>
 
