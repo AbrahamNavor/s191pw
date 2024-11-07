@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Utiles Escolares</h1>
-    <form method="POST">
+    <form method="POST" action="{{ route('rutapeticion') }}">
     @csrf
         <div>
             <label for="nombre">Nombre:</label>
