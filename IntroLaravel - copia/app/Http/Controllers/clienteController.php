@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class controladorCRUD extends Controller
+class clienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class controladorCRUD extends Controller
      */
     public function create()
     {
-        //
+        return view('formulario'); // Redirección a la vista formulario
     }
 
     /**
