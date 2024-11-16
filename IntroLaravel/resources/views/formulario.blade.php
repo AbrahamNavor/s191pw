@@ -15,22 +15,22 @@
             <x-alert tipo="warning">{{ $value }} </x-alert>
         @endsession
 
-        @session('exito')
+        @if(session('exito'))
             <script>
                 Swal.fire({
                     title: "Respuesta del servidor",
-                    text: "{{ $value }}",
+                    text: "{{ session('exito') }}",
                     icon: "success"
                 });
             </script>
-        @endsession
+        @endif
 
         <div class="card font-monospace">
             <div class="card-header fs-5 text-center text-primary">
                 {{ __('Formulario de Clientes') }}
             </div>
             <div class="card-body text-justify">
-                <form method="POST" action="/enviarCliente">
+                <form method="POST" action="{{route('rutaenvia')}}">
                     
                     @csrf
 

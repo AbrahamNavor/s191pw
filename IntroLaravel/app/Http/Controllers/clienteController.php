@@ -11,17 +11,17 @@ use App\Http\Requests\validadorCliente;
 
 class clienteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+
+    public function home(){
+        return view('inicio');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function index()
+    {
+        $consultaClientes= DB::table('cliente')->get();
+        return view('clientes', compact('consultaClientes'));
+    }
+
     public function create()
     {
         return view('formulario'); // Redirección a la vista formulario
