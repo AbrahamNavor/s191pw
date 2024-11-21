@@ -13,3 +13,11 @@ Route::get('/cliente', [clienteController::class, 'index'])->name('rutaconsulta'
 
 
 /* Route::view('/component', 'componentes')->name('rutacomponent'); */
+
+/* Route::get('/cliente/{id}/edit', [clienteController::class, 'edit'])->name('rutaeditar');
+Route::put('/cliente/{id}', [clienteController::class, 'update'])->name('rutaactualizar'); */
+
+Route::put('/cliente/{id}', [clienteController::class, 'update'])->name('rutaactualizar');
+Route::delete('/cliente/{id}', [clienteController::class, 'destroy'])->name('rutaeliminar');
+Route::get('/cliente/{id}', [clienteController::class, 'show'])->name('rutamuestra');
+Route::get('/cliente/{id}/edit', [clienteController::class, 'edit'])->name('rutaeditar');

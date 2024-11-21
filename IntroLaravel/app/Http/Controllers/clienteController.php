@@ -56,9 +56,10 @@ class clienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(int $id)
     {
-        //
+        $cliente = DB::table('cliente')->where('id', $id)->first();
+        return view('actualizar', compact('cliente'));
     }
 
     /**
@@ -66,7 +67,20 @@ class clienteController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        DB::table('cliente')
+            ->where('id', $id)
+            ->update([
+                'nombre' => $request->input('txtnombre'),
+                'apellido' => $request->input('txtapellido'),
+                'correo' => $request->input('txtcorreo'),
+                'telefono' => $request->input('txttelefono'),
+                'updated_at' => Carbon::now()
+            ]);
+
+        $usuario = $request->input('txtnombre'); //Redirección enviando msj en session
+        session()->flash('exito', 'Se actualizó el usuario: '.$usuario);
+
+        return to_route('rutaactualizar');
     }
 
     /**

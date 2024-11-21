@@ -1,6 +1,6 @@
 @extends('layouts.plantilla1')
 
-@section('titulo','Formulario Clientes')
+@section('titulo','Actualizar Cliente')
 
 @section('contenido')
 
@@ -27,12 +27,12 @@
 
         <div class="card font-monospace">
             <div class="card-header fs-5 text-center text-primary">
-                {{ __('Formulario de Clientes') }}
+                {{ __('Actualización de Cliente') }}
             </div>
             <div class="card-body text-justify">
-                <form method="POST" action="{{route('rutaenvia')}}">
+                <form method="POST" action="{{ route('rutaactualizar', ['id' => $id]) }}">
                     
-                    @csrf @method('PUT')
+                    @csrf
 
                     <div class="mb-3">
                         <label for="Nombre" class="form-label">{{ __('Nombre') }}: </label>
@@ -57,7 +57,7 @@
 
                     <div class="card-footer text-muted">
                         <div class="d-grid gap-2 mt-2 mb-1">
-                            <button type="submit" class="btn btn-success btn-sm">{{ __('Guardar Cliente') }}</button>
+                            <button type="submit" class="btn btn-success btn-sm">{{ __('Actualizar Cliente') }}</button>
                         </div>
                 </form>
             </div>
