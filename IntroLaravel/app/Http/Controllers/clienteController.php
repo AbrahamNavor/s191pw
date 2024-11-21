@@ -45,49 +45,43 @@ class clienteController extends Controller
         return to_route('rutacacas');
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(int $id)
+    public function edit($id)
     {
         $cliente = DB::table('cliente')->where('id', $id)->first();
         return view('actualizar', compact('cliente'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        DB::table('cliente')
-            ->where('id', $id)
-            ->update([
-                'nombre' => $request->input('txtnombre'),
-                'apellido' => $request->input('txtapellido'),
-                'correo' => $request->input('txtcorreo'),
-                'telefono' => $request->input('txttelefono'),
-                'updated_at' => Carbon::now()
-            ]);
-
-        $usuario = $request->input('txtnombre'); //Redirección enviando msj en session
-        session()->flash('exito', 'Se actualizó el usuario: '.$usuario);
-
-        return to_route('rutaactualizar');
+        $request->validate([
+            'txtnombre' => 'required|string|max:255',
+            'txtapellido' => 'required|string|max:255',
+            'txtcorreo' => 'required|email',
+            'txttelefono' => 'required|string|max:15',
+        ]);
+    
+        DB::table('cliente')->where('id', $id)->update([
+            'nombre' => $request->input('txtnombre'),
+            'apellido' => $request->input('txtapellido'),
+            'correo' => $request->input('txtcorreo'),
+            'telefono' => $request->input('txttelefono'),
+            'updated_at' => Carbon::now(),
+        ]);
+        
+        return redirect()->route('rutaconsulta')->with('exito', 'Cliente actualizado correctamente.');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    
+    
+    public function destroy($id)
     {
-        //
+        DB::table('cliente')->where('id', $id)->delete();
+    
+        return redirect()->route('rutaconsulta')->with('exito', 'Cliente eliminado correctamente.');
     }
 }
