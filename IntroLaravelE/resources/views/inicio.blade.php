@@ -29,7 +29,7 @@
         <p>{{ __('Presiona el boton para indicar') }}..</p>
 
         <a href="/form" class="btn btn-danger"> {{ __('Ir al Registro')}}</a>
-        <a href="{{ route('rutacacas') }}" class="btn btn-primary"> {{ __('Ir al Registro')}}</a>
+        <a href="{{ route('cliente.create') }}" class="btn btn-primary"> {{ __('Ir al Registro')}}</a>
 
     </div>
 

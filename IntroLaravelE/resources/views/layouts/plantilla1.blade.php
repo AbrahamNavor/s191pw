@@ -23,10 +23,10 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active {{ request()->routeIs('rutacacas')?"text-warning":"" }}" aria-current="page" href="/form">Registro Clientes</a>
+                <a class="nav-link active {{ request()->routeIs('cliente.create')?"text-warning":"" }}" aria-current="page" href="{{ route('cliente.create') }}">Registro Clientes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('rutaconsulta')?"text-warning":"" }}" href="{{ route('rutaconsulta') }}">Consultar Clientes</a>
+                <a class="nav-link {{ request()->routeIs('cliente.index')?"text-warning":"" }}" href="{{ route('cliente.index') }}">Consultar Clientes</a>
               </li>
             </ul>
           </div>
